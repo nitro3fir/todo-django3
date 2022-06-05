@@ -1,0 +1,23 @@
+{% extends "todo/base.html" %}
+
+{% block content %}
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+
+                 <h1>Организуй свои дела!</h1>
+            <p>Жизнь - это весело. Но жизнь тоже полна забот. Есть миллион разных вещей, которые ты мог бы делать. Но что важно, так это то, что вы делаете. Мы создали <b><i>Деловую колбасу</i></b>, чтобы помочь вам разобраться во всех ваших возможностях и жить той жизнью, которая для вас важнее всего. Вас ждет новая организованная жизнь.</p>
+        {% if user.is_authenticated %}
+        <a role="button" class="btn btn-primary btn-lg" href="{% url 'currenttodos' %}">Список дел</a>
+        {% else %}
+        <a role="button" class="btn btn-primary btn-lg" href="{% url 'signupuser' %}">Начать</a>
+        {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
